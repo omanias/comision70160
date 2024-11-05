@@ -16,11 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect('');
+mongoose.connect('mongodb+srv://omarmanias:1234562024@cluster0.bxjfm.mongodb.net/?retryWrites=true&w=majority', {});
 
 app.use(session({
     store: MongoStore.create({
-        mongoUrl: '',
+        mongoUrl: "mongodb+srv://omarmanias:1234562024@cluster0.bxjfm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
         ttl: 600,
     }),
     secret: 'coderSecret',

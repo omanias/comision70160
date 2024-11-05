@@ -37,15 +37,14 @@ app.engine('handlebars', handlebars.engine())
 app.set('views', __dirname + '/views')
 app.set('view engine', 'handlebars')
 
-/* app.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-    res.send(req.user);
-}) */
-
-
-app.get('/current', passportCall('jwt'), (req, res) => {
-    if (!user) return done(null, false, { messages: "no se encontró el usuario" })
+app.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.send(req.user);
 })
+
+/* app.get('/current', passportCall('jwt'), (req, res) => {
+    if (!user) return done(null, false, { messages: "no se encontró el usuario" })
+    res.send(req.user);
+}) */
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)

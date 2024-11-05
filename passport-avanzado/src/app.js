@@ -18,7 +18,7 @@ app.post('/login', (req, res) => {
         let token = jwt.sign({ email, password }, 'coderSecret', { expiresIn: '24h' })
         res.cookie('coderCookieToken', token, { maxAge: 60 * 60 * 1000, httpOnly: true })
         console.log('Cookie establecida:', token);
-        res.send('Usuario logueado con éxito');
+        res.json({ message: 'Usuario logueado con éxito', token });
     } else {
         res.status(401).send('Usuario o contraseña incorrectos');
     }
