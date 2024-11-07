@@ -10,7 +10,7 @@ console.log("Persistence option: ", entorno);
 const initializeContacts = async () => {
     switch (entorno) {
         case "MONGO":
-            await mongoose.connect("mongodb+srv://omarmanias:1234562024@cluster0.bxjfm.mongodb.net/prueba?retryWrites=true&w=majority&appName=Cluster0");
+            await mongoose.connect("MONGO_URL");
             const { default: ContactsMongo } = await import("./mongo/contacts.mongo.js");
             Contacts = ContactsMongo;
             break;
