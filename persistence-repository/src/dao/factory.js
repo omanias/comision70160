@@ -23,4 +23,4 @@ const initializeContacts = async () => {
     }
 };
 
-export { Contacts, initializeContacts };
+export { initializeContacts, Contacts };
